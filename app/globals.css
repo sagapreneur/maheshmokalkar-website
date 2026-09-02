@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #924931; /* User Specified Deep Warm Sienna Rust Bronze */
+  --color-primary-light: #A8573D;
+  --color-primary-dark: #743521;
+  --color-secondary: #E7CFAE; /* User Specified Soft Sand Cream */
+  --color-tertiary: #D4A96B; /* User Specified Warm Metallic Bronze Gold */
+  --color-tertiary-bright: #E2B77B;
+  --color-ink: #0F172A; /* Deep Slate Charcoal */
+  --color-ink-dark: #070A12;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #FAF6F0; /* Warm Sand Off-White */
+  --radius-card: 12px;
+  --radius-btn: 6px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color: var(--color-ink);
+    background-color: var(--color-surface-alt);
+    font-family: var(--font-inter), sans-serif;
+  }
+  
+  body {
+    background-color: var(--color-surface-alt);
+    color: var(--color-ink);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fraunces), serif;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4A96B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #924931;
+}
+
+/* Hard-Coded Metallic Gradients */
+.bg-gradient-bronze {
+  background: linear-gradient(135deg, #924931 0%, #D4A96B 50%, #743521 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #D4A96B 0%, #E7CFAE 50%, #B88E52 100%);
+}
+
+.text-gradient-gold {
+  color: #924931;
+}
+
+/* Architectural Solid Cards */
+.card-architectural {
+  background: #FFFFFF;
+  border: 1px solid rgba(146, 73, 49, 0.2);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  border-radius: 12px;
+}
+
+.bronze-frame-border {
+  border: 1px solid #924931;
+  position: relative;
+}
+
+.bronze-frame-border::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid rgba(146, 73, 49, 0.3);
+  pointer-events: none;
+}
