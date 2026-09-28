@@ -354,29 +354,29 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Continuous Motion Row to the RIGHT */}
-        <div className="relative w-full overflow-hidden group">
+        {/* Continuous Motion Row to the RIGHT (4 Visible at a Time on Desktop) */}
+        <div className="relative w-full overflow-hidden py-3 group">
           {/* Edge Fade Gradients */}
           <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
 
           {/* Moving Track to the RIGHT */}
-          <div className="animate-continuous-row-right flex gap-4 px-4">
+          <div className="animate-continuous-row-right flex gap-5 px-4">
             {[...featureHighlights, ...featureHighlights, ...featureHighlights].map((item, idx) => (
               <div
                 key={`${item.id}-${idx}`}
-                className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden shrink-0 border border-bronze-300/80 shadow-sm hover:shadow-xl hover:border-primary transition-all duration-300 group/item bg-bronze-100"
+                className="relative w-[280px] sm:w-[310px] md:w-[320px] lg:w-[290px] xl:w-[305px] aspect-[4/3] rounded-2xl overflow-hidden shrink-0 border-2 border-bronze-200 shadow-md hover:shadow-2xl hover:border-primary transition-all duration-300 group/item bg-bronze-100"
               >
                 <Image
                   src={item.src}
                   alt={item.title}
                   fill
                   className="object-cover group-hover/item:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 208px"
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 305px"
                 />
                 {/* Minimal gradient vignette and hover title */}
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                  <span className="text-[11px] font-serif font-bold text-white tracking-wide leading-tight drop-shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-xs sm:text-sm font-serif font-bold text-white tracking-wide leading-snug drop-shadow">
                     {item.title}
                   </span>
                 </div>
