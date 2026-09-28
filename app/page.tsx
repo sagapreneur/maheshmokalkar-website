@@ -44,6 +44,22 @@ import {
   GalleryItem
 } from "@/lib/content/profile";
 
+const featureHighlights = [
+  { id: "f01", src: "/feature-images/1.jpg", title: "Keynote Address & Honors" },
+  { id: "f03", src: "/feature-images/3.JPG", title: "Rotary Leadership Dialogue" },
+  { id: "f04", src: "/feature-images/4.jpg", title: "District Assembly Keynote" },
+  { id: "f05", src: "/feature-images/5.JPG", title: "Public Works Technical Review" },
+  { id: "f06", src: "/feature-images/6.jpg", title: "Rotary Fellowship & Harmony" },
+  { id: "f08", src: "/feature-images/8.jpg", title: "State Administrative Delegation" },
+  { id: "f09", src: "/feature-images/9.jpg", title: "Healthcare & Social Welfare" },
+  { id: "f10", src: "/feature-images/10.jpg", title: "Humanitarian Grant Milestone" },
+  { id: "f11", src: "/feature-images/11.jpg", title: "Community Service Stewardship" },
+  { id: "f12", src: "/feature-images/12.jpg", title: "District Governor Felicitation" },
+  { id: "f13", src: "/feature-images/13.jpg", title: "Youth Leadership Conclave" },
+  { id: "f14", src: "/feature-images/14.JPG", title: "Civic Governance & Public Works" },
+  { id: "f15", src: "/feature-images/WhatsApp Image 2026-09-05 at 20.08.47.jpeg", title: "Wardha Community Moments" },
+];
+
 export default function HomePage() {
   const [activePillarId, setActivePillarId] = useState<"engineer" | "rotary" | "family">("engineer");
   const [testimonialIdx, setTestimonialIdx] = useState(0);
@@ -323,7 +339,60 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          4. STORIES IN PICTURES (CONTINUOUS 1-ROW MOTION SHOWCASE)
+          4. COMPACT FEATURED MOMENTS REEL (CONTINUOUS MOTION TO THE RIGHT)
+         ========================================== */}
+      <section className="py-8 sm:py-10 bg-surface border-b border-bronze-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
+              <h3 className="font-serif font-bold text-base sm:text-lg text-ink">
+                Featured Life & Leadership Moments
+              </h3>
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary bg-bronze-100 px-2.5 py-0.5 rounded-full border border-bronze-300">
+                Highlights
+              </span>
+            </div>
+            <span className="text-[11px] font-medium text-ink/50 hidden sm:inline font-sans">
+              Continuous rightward motion · Hover to pause
+            </span>
+          </div>
+        </div>
+
+        {/* Continuous Motion Row to the RIGHT */}
+        <div className="relative w-full overflow-hidden group">
+          {/* Edge Fade Gradients */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
+
+          {/* Moving Track to the RIGHT */}
+          <div className="animate-continuous-row-right flex gap-4 px-4">
+            {[...featureHighlights, ...featureHighlights, ...featureHighlights].map((item, idx) => (
+              <div
+                key={`${item.id}-${idx}`}
+                className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden shrink-0 border border-bronze-300/80 shadow-sm hover:shadow-xl hover:border-primary transition-all duration-300 group/item bg-bronze-100"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  className="object-cover group-hover/item:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 208px"
+                />
+                {/* Minimal gradient vignette and hover title */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <span className="text-[11px] font-serif font-bold text-white tracking-wide leading-tight drop-shadow-sm">
+                    {item.title}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          5. STORIES IN PICTURES (CONTINUOUS 1-ROW MOTION SHOWCASE)
          ========================================== */}
       <section id="chronicle" className="py-20 bg-gradient-to-b from-[#FAF6F0] via-surface to-[#FAF6F0] border-b border-bronze-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">

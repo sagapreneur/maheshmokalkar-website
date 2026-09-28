@@ -112,3 +112,24 @@
 .animate-continuous-row:hover {
   animation-play-state: paused;
 }
+
+/* Continuous Slide to the RIGHT */
+@keyframes continuousSlideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-continuous-row-right {
+  display: flex;
+  width: max-content;
+  animation: continuousSlideRight 42s linear infinite;
+  will-change: transform;
+}
+
+.animate-continuous-row-right:hover {
+  animation-play-state: paused;
+}
