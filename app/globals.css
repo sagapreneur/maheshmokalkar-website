@@ -91,3 +91,24 @@
   border: 1px solid rgba(146, 73, 49, 0.3);
   pointer-events: none;
 }
+
+/* Continuous Story Carousel Keyframes */
+@keyframes continuousSlide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-continuous-row {
+  display: flex;
+  width: max-content;
+  animation: continuousSlide 48s linear infinite;
+  will-change: transform;
+}
+
+.animate-continuous-row:hover {
+  animation-play-state: paused;
+}

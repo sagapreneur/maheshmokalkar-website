@@ -323,10 +323,10 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          4. BRAND NEW: STORIES IN PICTURES (PHOTO SHOWCASE)
+          4. STORIES IN PICTURES (CONTINUOUS 1-ROW MOTION SHOWCASE)
          ========================================== */}
-      <section id="chronicle" className="py-20 bg-gradient-to-b from-[#FAF6F0] via-surface to-[#FAF6F0] border-b border-bronze-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="chronicle" className="py-20 bg-gradient-to-b from-[#FAF6F0] via-surface to-[#FAF6F0] border-b border-bronze-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <SectionHeading
             eyebrow="Visual Life Chronicle"
             title="Stories in Pictures: A Life of Service"
@@ -334,7 +334,7 @@ export default function HomePage() {
           />
 
           {/* Story Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
             {[
               { id: "All", label: "Curated Highlights" },
               { id: "Healthcare", label: "Healthcare & Impact" },
@@ -357,14 +357,23 @@ export default function HomePage() {
               </button>
             ))}
           </div>
+        </div>
 
-          {/* Photo Stories Masonry / Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {storyPhotos.slice(0, 9).map((photo, idx) => (
-              <MotionSection key={photo.id} delay={idx * 0.05}>
+        {/* Continuous Single-Row Track (4 Visible at a Time on Desktop) */}
+        <div className="relative w-full overflow-hidden py-4 group">
+          {/* Edge Fade Gradients */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-r from-[#FAF6F0] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-l from-[#FAF6F0] to-transparent z-10 pointer-events-none" />
+
+          {/* Moving Row */}
+          <div className="animate-continuous-row flex gap-5 px-4">
+            {[...storyPhotos, ...storyPhotos, ...storyPhotos].map((photo, idx) => {
+              const originalIdx = idx % (storyPhotos.length || 1);
+              return (
                 <div
-                  onClick={() => setSelectedPhotoIdx(idx)}
-                  className="group relative rounded-2xl overflow-hidden bg-surface border border-bronze-200 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full"
+                  key={`${photo.id}-${idx}`}
+                  onClick={() => setSelectedPhotoIdx(originalIdx)}
+                  className="w-[280px] sm:w-[310px] md:w-[320px] lg:w-[290px] xl:w-[305px] shrink-0 rounded-2xl overflow-hidden bg-surface border border-bronze-200 shadow-sm hover:shadow-2xl hover:border-primary transition-all duration-300 cursor-pointer flex flex-col group/card"
                 >
                   {/* Photo Container */}
                   <div className="relative w-full aspect-[4/3] overflow-hidden bg-bronze-100">
@@ -372,24 +381,25 @@ export default function HomePage() {
                       src={photo.src}
                       alt={photo.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover/card:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 305px"
                     />
                     
                     {/* Category pill */}
-                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-ink/80 text-white backdrop-blur-sm text-[11px] font-bold uppercase tracking-wider">
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-ink/85 text-white backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider shadow-sm">
                       {photo.category}
                     </div>
 
                     {/* Expand icon */}
-                    <div className="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 text-ink opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow">
-                      <Maximize2 className="w-4 h-4" />
+                    <div className="absolute top-3 right-3 p-1.5 rounded-full bg-white/90 text-ink opacity-0 group-hover/card:opacity-100 transition-opacity duration-200 shadow">
+                      <Maximize2 className="w-3.5 h-3.5" />
                     </div>
                   </div>
 
                   {/* Caption & Story Details */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div className="p-4 flex-1 flex flex-col justify-between bg-surface">
                     <div>
-                      <div className="flex items-center justify-between text-xs text-ink/60 font-semibold mb-1.5">
+                      <div className="flex items-center justify-between text-[11px] text-ink/60 font-semibold mb-1">
                         <span className="flex items-center gap-1">
                           <MapPin className="w-3 h-3 text-primary" />
                           {photo.location}
@@ -397,33 +407,35 @@ export default function HomePage() {
                         {photo.date && <span>{photo.date}</span>}
                       </div>
 
-                      <h4 className="text-base sm:text-lg font-serif font-bold text-ink group-hover:text-primary transition-colors leading-snug mb-2">
+                      <h4 className="text-sm sm:text-base font-serif font-bold text-ink group-hover/card:text-primary transition-colors leading-snug mb-1 line-clamp-1">
                         {photo.title}
                       </h4>
 
                       {photo.marathiTitle && (
-                        <p className="text-xs font-serif italic text-primary/80 mb-2">
+                        <p className="text-xs font-marathi font-semibold text-primary/90 mb-1.5 line-clamp-1">
                           {photo.marathiTitle}
                         </p>
                       )}
 
-                      <p className="text-xs sm:text-sm text-ink/75 leading-relaxed line-clamp-3">
+                      <p className="text-xs text-ink/75 leading-relaxed line-clamp-2">
                         {photo.caption}
                       </p>
                     </div>
 
-                    <div className="pt-4 mt-3 border-t border-bronze-100 flex items-center justify-between text-xs font-bold text-primary">
-                      <span>Click to view full story</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <div className="pt-3 mt-3 border-t border-bronze-100 flex items-center justify-between text-[11px] font-bold text-primary">
+                      <span>Click to view story</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </div>
-              </MotionSection>
-            ))}
+              );
+            })}
           </div>
+        </div>
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* View Full 60-Photo Archive Button */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <Button href="/gallery" variant="primary" size="lg">
               <Camera className="w-5 h-5 mr-1" />
               <span>Explore Complete 60-Photo Story Archive</span>
