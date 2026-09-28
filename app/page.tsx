@@ -343,18 +343,13 @@ export default function HomePage() {
          ========================================== */}
       <section className="py-8 sm:py-10 bg-surface border-b border-bronze-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
-              <h3 className="font-serif font-bold text-base sm:text-lg text-ink">
-                Featured Life & Leadership Moments
-              </h3>
-              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary bg-bronze-100 px-2.5 py-0.5 rounded-full border border-bronze-300">
-                Highlights
-              </span>
-            </div>
-            <span className="text-[11px] font-medium text-ink/50 hidden sm:inline font-sans">
-              Continuous rightward motion · Hover to pause
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
+            <h3 className="font-serif font-bold text-base sm:text-lg text-ink">
+              Featured Life & Leadership Moments
+            </h3>
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary bg-bronze-100 px-2.5 py-0.5 rounded-full border border-bronze-300">
+              Highlights
             </span>
           </div>
         </div>

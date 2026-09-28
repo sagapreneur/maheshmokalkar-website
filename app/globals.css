@@ -105,7 +105,7 @@
 .animate-continuous-row {
   display: flex;
   width: max-content;
-  animation: continuousSlide 48s linear infinite;
+  animation: continuousSlide 95s linear infinite;
   will-change: transform;
 }
 
@@ -126,7 +126,7 @@
 .animate-continuous-row-right {
   display: flex;
   width: max-content;
-  animation: continuousSlideRight 42s linear infinite;
+  animation: continuousSlideRight 85s linear infinite;
   will-change: transform;
 }
 
