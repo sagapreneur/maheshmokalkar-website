@@ -259,7 +259,71 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          3. BRAND NEW: STORIES IN PICTURES (PHOTO SHOWCASE)
+          3. "AAI-BABA" TRIBUTE PANEL
+         ========================================== */}
+      <section className="py-20 bg-surface-alt relative overflow-hidden border-b border-bronze-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <MotionSection>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#F3E5D4] p-8 md:p-12 rounded-2xl border-2 border-primary/30 shadow-md">
+              <div className="lg:col-span-7 flex flex-col">
+                <Quote className="w-12 h-12 text-primary mb-3 opacity-90" />
+                <span className="text-xs font-bold text-primary uppercase tracking-widest mb-2">
+                  Personal Values & Heritage
+                </span>
+                <h3 className="text-3xl font-serif font-extrabold text-ink mb-3">
+                  "Aai-Baba" — The Foundational Pillar
+                </h3>
+
+                {/* Sacred Dedication Verse */}
+                <div className="p-4 sm:p-5 rounded-xl bg-surface/90 border-l-4 border-primary border border-bronze-300/80 shadow-sm mb-5">
+                  <p className="font-marathi text-lg sm:text-xl font-bold text-primary leading-relaxed text-center sm:text-left">
+                    ॥ मी श्वास जयांसी अर्पिला, तयांचे नाव कोरिले ‘हरिमाला’ ॥
+                  </p>
+                </div>
+
+                <p className="text-base sm:text-lg text-ink/85 leading-relaxed italic mb-6 font-serif">
+                  "Everything I am today, every bridge I build for society, and every smile I bring to a child's face is a humble offering at the feet of my revered parents — Aai and Baba. Their values of selflessness, integrity, and unconditional love remain my guiding light."
+                </p>
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                  <span className="text-xs font-bold text-primary tracking-widest uppercase">
+                    Mahesh Mokalkar & Family
+                  </span>
+                </div>
+              </div>
+
+              {/* Framed Portrait of Aai-Baba */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="lg:col-span-5 flex flex-col items-center text-center group"
+              >
+                <div className="relative h-64 sm:h-72 md:h-80 w-full rounded-2xl overflow-hidden border-2 border-primary shadow-lg bg-surface group-hover:shadow-xl transition-all duration-300">
+                  <Image
+                    src="/images/aai-baba.png"
+                    alt="Aai and Baba — Revered Parents of Mahesh Mokalkar"
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    priority
+                  />
+                </div>
+
+                <div className="mt-3.5 text-center">
+                  <p className="font-serif font-extrabold text-base text-ink tracking-wide">
+                    Revered Aai & Baba
+                  </p>
+                  <p className="font-marathi text-xs font-bold text-primary mt-0.5">
+                    ‘हरिमाला’ — अखंड प्रेरणामूर्ती
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </MotionSection>
+        </div>
+      </section>
+
+      {/* ==========================================
+          4. BRAND NEW: STORIES IN PICTURES (PHOTO SHOWCASE)
          ========================================== */}
       <section id="chronicle" className="py-20 bg-gradient-to-b from-[#FAF6F0] via-surface to-[#FAF6F0] border-b border-bronze-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -387,7 +451,7 @@ export default function HomePage() {
       />
 
       {/* ==========================================
-          4. BENTO IMPACT STATS GRID
+          5. BENTO IMPACT STATS GRID
          ========================================== */}
       <section className="py-20 bg-surface border-b border-bronze-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -410,70 +474,6 @@ export default function HomePage() {
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ==========================================
-          5. "AAI-BABA" TRIBUTE PANEL
-         ========================================== */}
-      <section className="py-20 bg-surface-alt relative overflow-hidden border-b border-bronze-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <MotionSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#F3E5D4] p-8 md:p-12 rounded-2xl border-2 border-primary/30 shadow-md">
-              <div className="lg:col-span-7 flex flex-col">
-                <Quote className="w-12 h-12 text-primary mb-3 opacity-90" />
-                <span className="text-xs font-bold text-primary uppercase tracking-widest mb-2">
-                  Personal Values & Heritage
-                </span>
-                <h3 className="text-3xl font-serif font-extrabold text-ink mb-3">
-                  "Aai-Baba" — The Foundational Pillar
-                </h3>
-
-                {/* Sacred Dedication Verse */}
-                <div className="p-4 sm:p-5 rounded-xl bg-surface/90 border-l-4 border-primary border border-bronze-300/80 shadow-sm mb-5">
-                  <p className="font-marathi text-lg sm:text-xl font-bold text-primary leading-relaxed text-center sm:text-left">
-                    ॥ मी श्वास जयांसी अर्पिला, तयांचे नाव कोरिले ‘हरिमाला’ ॥
-                  </p>
-                </div>
-
-                <p className="text-base sm:text-lg text-ink/85 leading-relaxed italic mb-6 font-serif">
-                  "Everything I am today, every bridge I build for society, and every smile I bring to a child's face is a humble offering at the feet of my revered parents — Aai and Baba. Their values of selflessness, integrity, and unconditional love remain my guiding light."
-                </p>
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-                  <span className="text-xs font-bold text-primary tracking-widest uppercase">
-                    Mahesh Mokalkar & Family
-                  </span>
-                </div>
-              </div>
-
-              {/* Framed Portrait of Aai-Baba */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="lg:col-span-5 flex flex-col items-center text-center group"
-              >
-                <div className="relative h-64 sm:h-72 md:h-80 w-full rounded-2xl overflow-hidden border-2 border-primary shadow-lg bg-surface group-hover:shadow-xl transition-all duration-300">
-                  <Image
-                    src="/images/aai-baba.png"
-                    alt="Aai and Baba — Revered Parents of Mahesh Mokalkar"
-                    fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    priority
-                  />
-                </div>
-
-                <div className="mt-3.5 text-center">
-                  <p className="font-serif font-extrabold text-base text-ink tracking-wide">
-                    Revered Aai & Baba
-                  </p>
-                  <p className="font-marathi text-xs font-bold text-primary mt-0.5">
-                    ‘हरिमाला’ — अखंड प्रेरणामूर्ती
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </MotionSection>
         </div>
       </section>
 
