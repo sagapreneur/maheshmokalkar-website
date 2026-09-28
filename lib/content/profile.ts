@@ -474,6 +474,22 @@ export const timelineData: TimelineEvent[] = [
 export const testimonialsData: Testimonial[] = [
   {
     id: "1",
+    name: "Rtn. Shriniwas Lele",
+    role: "Past Assistant District Governor (ADG)",
+    organization: "Rotary International District 3030",
+    quote: "Mahesh Mokalkar is the epitome of visionary leadership and boundless energy in Rotary. His ability to mobilize resources for 300+ pediatric heart surgeries and mentor leaders across District 3030 with warmth, precision, and discipline is truly inspirational.",
+    avatar: "/images/testimonials/rtn-shriniwas-lele.jpg",
+  },
+  {
+    id: "2",
+    name: "Rtn. Asif Zahid",
+    role: "Past President",
+    organization: "Rotary Club of Gandhi City, Wardha",
+    quote: "Having worked closely with Mahesh at Rotary Club of Gandhi City Wardha for decades, I have seen his tireless commitment up close. He blends civil engineering rigor with profound humanitarian empathy in everything he undertakes.",
+    avatar: "/images/testimonials/rtn-asif-zahid.jpg",
+  },
+  {
+    id: "3",
     name: "Rtn. Kishor Kedia",
     role: "Past District Governor",
     organization: "Rotary International District 3030",
@@ -481,7 +497,7 @@ export const testimonialsData: Testimonial[] = [
     avatar: "/images/testimonials/rtn-kishor-kedia.webp",
   },
   {
-    id: "2",
+    id: "4",
     name: "Rtn. Madhu Rughwani",
     role: "Senior Rotarian & Business Leader",
     organization: "Rotary Club of Nagpur",
@@ -489,7 +505,7 @@ export const testimonialsData: Testimonial[] = [
     avatar: "/images/testimonials/rtn-madhu-rughwani.webp",
   },
   {
-    id: "3",
+    id: "5",
     name: "Rtn. Shabbir Shakir",
     role: "Past District Governor",
     organization: "Rotary International District 3030",
@@ -497,7 +513,7 @@ export const testimonialsData: Testimonial[] = [
     avatar: "/images/testimonials/rtn-shabbir-shakir.webp",
   },
   {
-    id: "4",
+    id: "6",
     name: "Rtn. Rajiv Sharma",
     role: "Rotary Leadership Trainer",
     organization: "RID 3030 Training Institute",
@@ -505,7 +521,7 @@ export const testimonialsData: Testimonial[] = [
     avatar: "/images/testimonials/rtn-rajiv-sharma.webp",
   },
   {
-    id: "5",
+    id: "7",
     name: "Rtr. Anand Zunzunwala",
     role: "Past District Rotaract Representative",
     organization: "Rotaract District 3030",
