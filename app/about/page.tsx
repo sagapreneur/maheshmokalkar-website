@@ -410,6 +410,34 @@ export default function AboutPage() {
                   </p>
                 </Card>
               </div>
+
+              {/* Aai-Baba Tribute Card */}
+              <Card variant="gold-border" className="bg-[#F3E5D4]/70 p-6 rounded-card border-2 border-primary/30">
+                <div className="flex flex-col sm:flex-row items-center gap-5">
+                  <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-xl overflow-hidden border-2 border-primary shrink-0 shadow-md">
+                    <Image
+                      src="/images/aai-baba.png"
+                      alt="Revered Aai & Baba — Hari & Mala"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-primary">
+                      Revered Parents · अखंड प्रेरणामूर्ती
+                    </span>
+                    <h5 className="font-serif font-bold text-ink text-lg sm:text-xl mt-1 mb-2">
+                      Aai & Baba — 'हरिमाला'
+                    </h5>
+                    <p className="font-marathi text-sm sm:text-base font-bold text-primary leading-relaxed">
+                      ॥ मी श्वास जयांसी अर्पिला, तयांचे नाव कोरिले ‘हरिमाला’ ॥
+                    </p>
+                    <p className="text-xs text-ink/75 mt-2 italic font-serif">
+                      "Their timeless teachings of truth, humility, and unconditional giving remain the eternal compass guiding every endeavor."
+                    </p>
+                  </div>
+                </div>
+              </Card>
             </div>
 
           </div>

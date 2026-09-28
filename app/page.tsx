@@ -425,9 +425,17 @@ export default function HomePage() {
                 <span className="text-xs font-bold text-primary uppercase tracking-widest mb-2">
                   Personal Values & Heritage
                 </span>
-                <h3 className="text-3xl font-serif font-extrabold text-ink mb-4">
+                <h3 className="text-3xl font-serif font-extrabold text-ink mb-3">
                   "Aai-Baba" — The Foundational Pillar
                 </h3>
+
+                {/* Sacred Dedication Verse */}
+                <div className="p-4 sm:p-5 rounded-xl bg-surface/90 border-l-4 border-primary border border-bronze-300/80 shadow-sm mb-5">
+                  <p className="font-marathi text-lg sm:text-xl font-bold text-primary leading-relaxed text-center sm:text-left">
+                    ॥ मी श्वास जयांसी अर्पिला, तयांचे नाव कोरिले ‘हरिमाला’ ॥
+                  </p>
+                </div>
+
                 <p className="text-base sm:text-lg text-ink/85 leading-relaxed italic mb-6 font-serif">
                   "Everything I am today, every bridge I build for society, and every smile I bring to a child's face is a humble offering at the feet of my revered parents — Aai and Baba. Their values of selflessness, integrity, and unconditional love remain my guiding light."
                 </p>
@@ -459,8 +467,8 @@ export default function HomePage() {
                   <p className="font-serif font-extrabold text-base text-ink tracking-wide">
                     Revered Aai & Baba
                   </p>
-                  <p className="text-xs font-bold text-primary uppercase tracking-widest mt-0.5">
-                    Forever Guiding Values
+                  <p className="font-marathi text-xs font-bold text-primary mt-0.5">
+                    ‘हरिमाला’ — अखंड प्रेरणामूर्ती
                   </p>
                 </div>
               </motion.div>
