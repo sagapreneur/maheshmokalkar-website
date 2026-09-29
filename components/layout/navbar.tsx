@@ -84,11 +84,8 @@ export const Navbar = () => {
 
             {/* Center: Key Creed & Dedication */}
             <div className="hidden lg:flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full bg-primary/40 border border-primary/50 text-[10px] font-bold uppercase tracking-wider text-gold-200 shadow-sm">
+              <span className="px-3 py-0.5 rounded-full bg-primary/40 border border-primary/50 text-[11px] font-bold uppercase tracking-wider text-gold-200 shadow-sm">
                 Service Above Self
-              </span>
-              <span className="font-marathi text-xs text-sand-200/90 font-medium">
-                ॥ मी श्वास जयांसी अर्पिला, तयांचे नाव कोरिले ‘हरिमाला’ ॥
               </span>
             </div>
 
