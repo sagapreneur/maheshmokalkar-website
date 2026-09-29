@@ -27,7 +27,7 @@ export default function InitiativesPage() {
   };
 
   return (
-    <div className="pt-28 pb-20">
+    <div className="pt-32 pb-20">
       {/* Header Banner */}
       <section className="bg-mesh-pattern py-16 border-b border-gold-300/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

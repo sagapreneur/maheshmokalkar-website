@@ -90,7 +90,7 @@ export default function HomePage() {
   const activePhoto = selectedPhotoIdx !== null ? storyPhotos[selectedPhotoIdx] : null;
 
   return (
-    <div className="pt-20 md:pt-24 pb-20 overflow-x-hidden bg-surface-alt">
+    <div className="pt-24 md:pt-28 pb-20 overflow-x-hidden bg-surface-alt">
       
       {/* ==========================================
           1. HERO SECTION — EDITORIAL STORYTELLING SHOWCASE

@@ -53,7 +53,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-28 pb-20">
+    <div className="pt-32 pb-20">
       {/* Header Banner */}
       <section className="bg-sand-100 py-16 border-b border-sand-300/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
